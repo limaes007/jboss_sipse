@@ -18,7 +18,7 @@ La documentacion del servidor se puede consultar en https://docs.jboss.org/autho
 
  	Alternatively, you can create your own selecting the additional subsystems you want to add, remove, or modify.
 
-3. Si todo salio bien (casi nunca pasa) el sistema le presenta una pagina de bienvenida en http://127.0.0.1:8080/
+3. Si todo salio bien (casi nunca pasa) el sistema le presenta una pagina de bienvenida en http://127.0.0.1:8080/ (el puerto 8080 es el que viene por defecto en este jboss le deje el 7777 por que me creaba complicaciones con el apex del Oracle xe, en todo caso esa configuracion esta en el archivo standalone.conf
 
 4. Para crear a la consola de administracion de jboss se debe crear un usuario de administracion, usando el archivo add-user.bat (windows) o add-user.sh (linux)
 el archivo se encuentra en la carpeta bin, y presentara una especie de wizard que le permitira crear el usuario
@@ -52,7 +52,7 @@ CREACION DEL DATASOURCE EN EL EL JBOSS 7.1
 
 2. El driver se debe configurar en la carpeta modules, yo la configure en la carpeta /modules/com/oracle/ojdbc7/main/ y ahi se pone el jar (no olvidar la carpeta main).
 
-3. Al lado del jar se crea un archivo que se debe llamar modules.xml que debe ser parecido al siguiente (cambiaria deacuerdo a la configuracion de cada cual)
+3. Al lado del jar se crea un archivo que se debe llamar modules.xml que debe ser parecido al siguiente (cambiaria deacuerdo a la configuracion de cada cual es decir el name debe tener la estructura de las carpetas)
 	<?xml version="1.0" encoding="UTF-8"?>
 	<!-- ~ JBoss, Home of Professional Open Source. ~ Copyright 2010, Red Hat, Inc., and individual contributors ~ as indicated by the @author tags. See the copyright.txt file in the ~ distribution for a full listing of individual contributors. ~ ~ This is free software; you can redistribute it and/or modify it ~ under the terms of the GNU Lesser General Public License as ~ published by the Free Software Foundation; either version 2.1 of ~ the License, or (at your option) any later version. ~ ~ This software is distributed in the hope that it will be useful, ~ but WITHOUT ANY WARRANTY; without even the implied warranty of ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU ~ Lesser General Public License for more details. ~ ~ You should have received a copy of the GNU Lesser General Public ~ License along with this software; if not, write to the Free ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org. -->
 	<module name="com.oracle.ojdbc7" xmlns="urn:jboss:module:1.1">
